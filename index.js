@@ -39,12 +39,12 @@ const issueOptions = [
 const commands = [
     new SlashCommandBuilder()
         .setName('command2')
-        .setDescription('Select the category of your issue')
-        .setDefaultMemberPermissions(0),
+        .setDescription('Select the category of your issue'),
+       
     new SlashCommandBuilder()
         .setName('command3')
         .setDescription('Show connect button')
-        .setDefaultMemberPermissions(0)
+       
 ];
 
 client.once('ready', async () => {
