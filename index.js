@@ -6,7 +6,7 @@ const {
 } = require('discord.js');
 require('dotenv').config();
 
-const keepAlive = require('./server')
+const keepAlive = require('./server');
 
 const client = new Client({
     intents: [
@@ -40,15 +40,13 @@ const commands = [
     new SlashCommandBuilder()
         .setName('command2')
         .setDescription('Select the category of your issue'),
-       
     new SlashCommandBuilder()
         .setName('command3')
         .setDescription('Show connect button')
-       
 ];
 
 client.once('ready', async () => {
-    console.log(`✅ Bot is online as ${client.user.tag}!`);
+    console.log(`✅ Botx is online as ${client.user.tag}!`);
 
     try {
         await client.application.commands.set(commands);
@@ -81,7 +79,11 @@ client.on('interactionCreate', async interaction => {
                 })));
 
             const row = new ActionRowBuilder().addComponents(selectMenu);
-            await interaction.reply({ embeds: [embed], components: [row] });
+            await interaction.reply({ 
+                embeds: [embed], 
+                components: [row],
+                ephemeral: false
+            });
 
         } else if (interaction.commandName === 'command3') {
             const row = new ActionRowBuilder().addComponents(
@@ -93,7 +95,8 @@ client.on('interactionCreate', async interaction => {
 
             await interaction.reply({
                 content: 'Click the button below to connect:',
-                components: [row]
+                components: [row],
+                ephemeral: false
             });
         }
     } else if (interaction.isStringSelectMenu()) {
@@ -108,12 +111,11 @@ client.on('interactionCreate', async interaction => {
             await interaction.reply({
                 content: 'Secured wallet fix',
                 components: [row],
-                ephemeral: true
+                ephemeral: false
             });
         }
     }
 });
 
 keepAlive();
-
 client.login(process.env.TOKEN);
