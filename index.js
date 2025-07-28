@@ -71,7 +71,7 @@ client.on('interactionCreate', async interaction => {
 
             const selectMenu = new StringSelectMenuBuilder()
                 .setCustomId('issue_select')
-                .setPlaceholder('Choose an issue')
+                .setPlaceholder('Select Category')
                 .addOptions(issueOptions.map((option, index) => ({
                     label: option.label,
                     description: option.description,
