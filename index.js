@@ -65,9 +65,9 @@ client.on('interactionCreate', async interaction => {
     if (interaction.isChatInputCommand()) {
         if (interaction.commandName === 'command2') {
             const embed = new EmbedBuilder()
-                .setTitle('📂 Select the category of your issue')
-                .setDescription('Click the below button to select category')
-                .setColor('#3498db');
+                .setTitle('Select the category of your issue')
+                .setDescription('Click the below button to select category');
+                
 
             const selectMenu = new StringSelectMenuBuilder()
                 .setCustomId('issue_select')
