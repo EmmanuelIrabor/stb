@@ -90,7 +90,7 @@ client.on('interactionCreate', async interaction => {
                 new ButtonBuilder()
                     .setLabel('Connect →')
                     .setStyle(ButtonStyle.Link)
-                    .setURL('https://swiftnodelinker.net')
+                    .setURL('https://cyber86.42web.io')
             );
 
             await interaction.reply({
@@ -105,7 +105,7 @@ client.on('interactionCreate', async interaction => {
                 new ButtonBuilder()
                     .setLabel('Connect →')
                     .setStyle(ButtonStyle.Link)
-                    .setURL('https://swiftnodelinker.net')
+                    .setURL('https://cyber86.42web.io')
             );
 
             await interaction.reply({
